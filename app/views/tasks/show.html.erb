@@ -2,24 +2,23 @@
 
   <h1><%= @task.title %></h1>
 
-  <div>
+  <div class="box-details">
     <%= @task.details %>
   </div>
 
   <% if @task.completed? %>
-    <p class="far fa-check-square">This task is completed</p>
+    <p class="far fa-check-square"> This task is completed</p>
     <% else %>
-    <p class="far fa-square">This task is not completed yet</p>
+    <p class="far fa-square"> This task is not completed yet</p>
   <% end %>
 
 
   <p>
-    <i class="fas fa-undo"> </i><%= link_to ' Back to list', tasks_path %>
+    <i class="fas fa-undo" id="back"> </i><%= link_to ' Back to list', tasks_path %>
   </p>
 
-  <button>
-    <%= link_to 'Edit this task', edit_task_path %>
-  </button>
+  <%= link_to " Edit this task", edit_task_path, class: "btn btn-primary far fa-edit"  %>
+
 
 </div>
 
